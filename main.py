@@ -18,8 +18,6 @@ zabbix_port = int(os.getenv("ZABBIX_PORT", 8080))
 zabbix_metric_hostname = os.getenv("ZABBIX_METRIC_HOST","Zabbix Server")
 zabbix_metric_key = os.getenv("ZABBIX_KETRIC_KEY", "speedtest[fastdotcom]")
 
-line_regex = re.compile(log_format.format("(.+?)", "([0-9.]+)"))
-
 
 if __name__ == '__main__':
     print("Starting Logger")

@@ -35,7 +35,7 @@ Default: "Zabbix Server"
 
 The zabbix host name for the device on which the metric is reported under
 
-## ZABBIX_KETRIC_KEY
+## ZABBIX_METRIC_KEY
 Default: speedtest[fastdotcom]
 
 The key name for the reported value. It should be configured under the host with a type of Trapper

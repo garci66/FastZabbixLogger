@@ -1,3 +1,4 @@
 git+https://github.com/nkgilley/fast.com.git
-aiohttp
 python-dateutil
+py-zabbix
+

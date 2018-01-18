@@ -1,11 +1,9 @@
 version: '2'
 services:
   fastlogger:
-    image: vilsol/fastlogger
+    image: garci66/fastzabbixlogger
     restart: always
-    ports:
-     - 8080:8080
     volumes:
      - ./speed-log.txt:/speed-log.txt
     environment:
-     - TZ=Europe/Riga
+     - TZ=America/Argentina/Buenos_Aires

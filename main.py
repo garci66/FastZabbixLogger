@@ -14,9 +14,9 @@ date_format = os.getenv("DATE_FORMAT", "%a %b %d %X %Z %Y")
 log_format = os.getenv("LOG_FORMAT", "{} - {} Mbps - Zabbix Response: {}")
 output_file = os.getenv("OUTPUT_FILE", "/speed-log.txt")
 test_duration = int(os.getenv("TEST_DURATION", 6))
-zabbix_server = os.getenv("ZABBIX_SERVER", "127.0.0.1")
-zabbix_port = int(os.getenv("ZABBIX_PORT", 10051))
-zabbix_metric_hostname = os.getenv("ZABBIX_METRIC_HOST","Zabbix Server")
+zabbix_server = os.getenv("ZABBIX_SERVER",os.getenv("ZABBIX_SERVER_PORT_10051_TCP_ADDR","127.0.0.1"))
+zabbix_port = int(os.getenv("ZABBIX_PORT",os.getenv("ZABBIX_SERVER_PORT_10051_TCP_PORT", 10051)))
+zabbix_metric_hostname = os.getenv("ZABBIX_METRIC_HOST","Zabbix server")
 zabbix_metric_key = os.getenv("ZABBIX_METRIC_KEY", "speedtest[fastdotcom]")
 
 

@@ -48,3 +48,24 @@ Default: `speedtest[fastdotcom]`
 
 The key name for the reported value. It should be configured under the host with a type of Trapper
 The template (in the repo) should create the times
+
+## Some details on how to launch
+```
+
+ 1177  docker run --name zabbix-fastdotcom   -e TEST_DURATION=10 -e ZABBIX_SERVER=192.168.128.7 -e ZABBIX_PORT=10051  -d garci66/fastzabbixlogger:0.1.2
+ 1179  docker exec -it zabbix-fastdotcom sh
+ 1181  docker stop zabbix-fastdotcom
+ 1183  docker stop zabbix-fastdotcom
+ 1185  dockerrm zabbix-fastdotcom
+ 1186  docker rm zabbix-fastdotcom
+ 1187  docker run --name zabbix-fastdotcom   -e TEST_DURATION=10 -e ZABBIX_SERVER=192.168.128.7 -e ZABBIX_PORT=10051 -e ZABBIX_METRIC_HOST="Zabbix server"  -d garci66/fastzabbixlogger:0.1.2
+ 1188  docker exec -it zabbix-fastdotcom sh
+ 1190  docker stop zabbix-fastdotcom
+ 1191  docker run --name zabbix-fastdotcom  --restart=always  --link zabbix-server:zabbix-server  -e TEST_DURATION=10 -e SLEEP_MIN=60 -e ZABBIX_METRIC_HOST="Zabbix server"  -d garci66/fastzabbixlogger:0.1.3
+ 1192  docker rm zabbix-fastdotcom
+ 1193  docker run --name zabbix-fastdotcom  --restart=always  --link zabbix-server:zabbix-server  -e TEST_DURATION=10 -e SLEEP_MIN=60 -e ZABBIX_METRIC_HOST="Zabbix server"  -d garci66/fastzabbixlogger:0.1.3
+ 1195  docker exec -it zabbix-fastdotcom sh
+ 1197  docker stop zabbix-fastdotcom
+ 1198  docker rm zabbix-fastdotcom
+ 1199  docker run --name zabbix-fastdotcom  --restart=always  --link zabbix-server:zabbix-server  -e TEST_DURATION=20 -e SLEEP_MIN=60  -d garci66/fastzabbixlogger:0.1.4
+```
